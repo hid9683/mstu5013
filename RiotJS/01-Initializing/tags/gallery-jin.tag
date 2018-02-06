@@ -1,8 +1,12 @@
 <gallery-jin>
-	
+
 	<strong>gallery-jin.tag</strong>
 	<div class="images">
+<<<<<<< HEAD
 		<photo-jin each={ imgURLs }></photo-jin>
+=======
+		<photo-jin each={ word in words }></photo-jin>
+>>>>>>> upstream/master
 	</div>
 
 	<script>
