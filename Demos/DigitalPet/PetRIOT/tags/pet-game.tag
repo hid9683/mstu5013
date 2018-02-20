@@ -7,7 +7,7 @@
 		<div class="bar health">
 			<div style="width:{ percentHealth }%;">&nbsp;</div>
 		</div>
-		<p>HEALTH: { petHealth }</p>
+		<p>HEALTH: { petHealth }</p> //displaying the quantitative condition of the petHealth
 	</div>
 
 	<div>
@@ -50,13 +50,13 @@
 		}
 
 		feed(event) {
-			this.petHealth = this.petHealth + 10;
-			this.addToLog('Your pet eats and gains health.');
+			this.petHealth = this.petHealth - 10;
+			this.addToLog('Your pet eats and loses health.');
 		}
 
 		exercise(event) {
 			this.petStrength = this.petStrength + 1;
-			this.petHealth = this.petHealth - 10;
+			this.petHealth = this.petHealth + 10;
 			this.addToLog('Your pet works out and gains strength.');
 		}
 
@@ -93,17 +93,17 @@
 				this.petImage = imgMap[imageType];
 			} else {
 				if (this.petHealth > (TOTALHEALTH * 0.8)) {
-					this.petImage = "pet-0";
+					this.petImage = "pet-5";//dead
 				} else if (this.petHealth > (TOTALHEALTH * 0.6)) {
-					this.petImage = "pet-1";
-				} else if (this.petHealth > (TOTALHEALTH * 0.4)) {
-					this.petImage = "pet-2";
-				} else if (this.petHealth > (TOTALHEALTH * 0.2)) {
-					this.petImage = "pet-3";
-				} else if (this.petHealth > 0) {
 					this.petImage = "pet-4";
+				} else if (this.petHealth > (TOTALHEALTH * 0.4)) {
+					this.petImage = "pet-3";
+				} else if (this.petHealth > (TOTALHEALTH * 0.2)) {
+					this.petImage = "pet-2";
+				} else if (this.petHealth > 0) {
+					this.petImage = "pet-1";
 				} else {
-					this.petImage = "pet-5"; // DEAD
+					this.petImage = "pet-0";
 				}
 			}
 		}
@@ -144,7 +144,7 @@
 
 			this.setStatBars();
 		});
-
+  console.log(this);
 	</script>
 
 	<style>

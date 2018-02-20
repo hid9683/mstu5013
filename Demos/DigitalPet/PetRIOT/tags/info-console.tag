@@ -7,6 +7,8 @@
 
 
 	<script>
+	const x= 0;
+	x = 1;
 		var that = this;
 		console.log('info-console.tag');
 
