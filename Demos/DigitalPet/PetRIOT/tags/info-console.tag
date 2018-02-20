@@ -1,8 +1,9 @@
 <info-console>
 
-	<div show={ logList }>
+	<div>
 		<div>GAME LOG:</div>
-		<pre><virtual each={ log in logList }>{ log }<br /></virtual></pre>
+		<pre show={ logList.length > 0 }><virtual each={ log in logList }>{ log }<br /></virtual></pre>
+		<div hide={ logList.length > 0 } ref="noLog">NO LOGS AVAILABLE</div>
 	</div>
 
 
@@ -10,11 +11,11 @@
 	const x= 0;
 	x = 1;
 		var that = this;
-		console.log('info-console.tag');
+
+		this.logList = [];
 
 		this.on('update', function() {
 			var clone = this.opts.logs.slice(0);
-
 		  this.logList = clone.reverse();
 		});
 
@@ -24,6 +25,10 @@
 		:scope {
 			display: block;
 			margin-top: 1em;
+		}
+		[ref="noLog"] {
+			margin-top: 1em;
+			color: silver;
 		}
 	</style>
 </info-console>
