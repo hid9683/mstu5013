@@ -1,12 +1,19 @@
 <gallery-jin>
-	
+
 	<strong>gallery-jin.tag</strong>
 	<div class="images">
-		<photo-jin each={ words }></photo-jin>
+<<<<<<< HEAD
+		<photo-jin each={ imgURLs }></photo-jin>
+=======
+		<photo-jin each={ word in words }></photo-jin>
+>>>>>>> upstream/master
 	</div>
 
 	<script>
 		this.words = ["Alpha","Bravo","Charlie","Delta","Echo"];
+		this.imgURLs = [
+		"http://placehold.it/50x50"
+		]
 	</script>
 
 	<style>
